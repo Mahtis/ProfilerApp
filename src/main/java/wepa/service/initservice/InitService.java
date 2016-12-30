@@ -41,7 +41,7 @@ import wepa.service.QuestionService;
  * @author lmantyla
  */
 @Service
-@org.springframework.context.annotation.Profile({"default", "production"})
+@org.springframework.context.annotation.Profile("default")
 public class InitService {
 
     @Autowired
@@ -89,6 +89,14 @@ public class InitService {
         Question question2 = questionService.createQuestion("How tall is this person?", Arrays.asList("Midget", "140-150", "150-160", "160-170", "170-180", "180-190", "190-200", "HUGE"));
         Question question3 = questionService.createQuestion("Does this person look like a dog or a cat person?", Arrays.asList("Neither", "Dog", "Cat", "Both"));
         Question question4 = questionService.createQuestion("Does this person look like Bitch?", Arrays.asList("No", "Yes", "What?"));
+        questionService.createQuestion("What kind of area does this person live in?", Arrays.asList("countryside", "small village", "large village", "small city", "big city"));
+        questionService.createQuestion("On a scale of 1-10, how outgoing and social is this person?", Arrays.asList("1 total loner", "2", "3", "4", "5", "6", "7", "8", "9", "10 extremely social"));
+        questionService.createQuestion("On a scale of 1-10, how neurotic is this person?", Arrays.asList("1 extremely neurotic", "2", "3", "4", "5", "6", "7", "8", "9", "10 extremely laid back"));
+        questionService.createQuestion("On a scale of 1-10, how open to new things is this person?", Arrays.asList("1 extremely close minded", "2", "3", "4", "5", "6", "7", "8", "9", "10 extremely open-minded"));
+        questionService.createQuestion("On a scale of 1-10, how conscientious/diligent/meticulous to new things is this person?", Arrays.asList("1 extremely easy-going and careless", "2", "3", "4", "5", "6", "7", "8", "9", "10 extremely diligent"));
+        questionService.createQuestion("On a scale of 1-10, how agreeable/pleasant is this person?", Arrays.asList("1 extremely rude/unpleasant", "2", "3", "4", "5", "6", "7", "8", "9", "10 extremely pleasant/nice"));
+        questionService.createQuestion("On a scale of 1-10, how physically demanding is this persons work?", Arrays.asList("1 not physical at all(desk job)", "2", "3", "4", "5", "6", "7", "8", "9", "10 extremely physical (proffesional athlete)"));
+        questionService.createQuestion("On a scale of 1-10, how religious is this person?", Arrays.asList("1 not religious", "2", "3", "4", "5", "6", "7", "8", "9", "10 very religious"));
 
         Account account1 = createAccount("Gilgamesh", "user", "user", "gilgamesh@sumer.com", false);
         Account account2 = createAccount("Assurnasirpal", "user2", "user2", "assurnaspl@ashur.com", false);

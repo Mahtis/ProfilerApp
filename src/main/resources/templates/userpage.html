@@ -64,6 +64,23 @@
                 </ul>
 
             </div>
+            <div class="col-md-6">
+                In case you no longer want to be with us just enter your password and that'll be the last of it..
+                <section sec:authorize="hasAuthority('USER')">
+
+                    <form method="post" th:action="@{/deleteaccount}">
+
+
+                        <input name="password" type="password" placeholder="Password..."/>
+                        <button value="Delete account" class="btn btn-danger" type="submit">Delete account</button>
+
+                    </form>
+                    <!--<input type="password" th:name="password" class="form-control" placeholder="Password"/>-->
+                    <!--<button value="Delete account" type="submit" class="btn-danger">Delete account</button>-->
+
+
+                </section>
+            </div>
         </div>
     </body>
 </html>
