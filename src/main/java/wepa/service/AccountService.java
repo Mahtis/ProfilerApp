@@ -129,6 +129,9 @@ public class AccountService {
 
     @Transactional
     public void adminDeleteAccount(Account user) {
+        if(user.getUsername().equals("FooBar")) {
+            return;
+        }
         user = accountRepository.findOne(user.getId());
         List<Profile> usersProfiles = user.getProfiles();
         Account fooBar = accountRepository.findByUsername("FooBar");

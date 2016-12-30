@@ -44,6 +44,8 @@ public class IndexController {
         //List<Profile> profiles = profileService.findNewestProfiles();
         if (profiles.size() >= 6) {
             model.addAttribute("profiles1", profiles.subList(0, 6));
+        } else {
+            model.addAttribute("profiles1", profiles.subList(0, profiles.size()));
         }
         if (profiles.size() >= 12) {
             model.addAttribute("profiles2", profiles.subList(6, 12));
