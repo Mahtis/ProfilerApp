@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
     <head lang="en">
         <meta charset="UTF-8"/>
-        <title>Profiler userpage</title>
+        <title>Userpage</title>
         <!--<link rel="stylesheet" th:href="@{/css/styles.css}"/>-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -34,11 +34,10 @@
                             <img th:src="@{/images/{id}/content(id=${profile.thumbnailId})}"/>
                             <span th:text="'profile ' + ${profile.id} + ' (' + ${#dates.format(profile.creationTime,'yyyy-MM-dd')} + ')'">profile</span>
                             <span class="badge" th:text="${#lists.size(profile.answeringAccounts)}">12</span>
-                            <form method="post" th:action="@{/profiles/delete/{id} (id=${profile.id})}">
-                                <br/>
-                                <button value = "Delete" type="submit" class="btn-danger">Delete</button>
-                            </form>
                         </a>
+                        <form method="post" th:action="@{/profiles/delete/{id} (id=${profile.id})}">
+                            <button value = "Delete" type="submit" class="btn btn-danger">Delete</button>
+                        </form>
                     </li>
                 </ul>
                 <a href="/createprofile" class="btn btn-info">Create a new profile</a>

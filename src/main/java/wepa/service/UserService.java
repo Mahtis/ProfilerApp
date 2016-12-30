@@ -37,6 +37,8 @@ public class UserService {
 
             user.setUsername("maxwell");
             user.setPassword("$2a$10$HOenmXvSwgDYdJLt5mvYoelgKWRem9UcFf.yTUOjal7aoOsvf2SWi");
+            user.setName("maxwell smart");
+            user.setEmail("maxwell@gg.com");
             user.setAuthorities(Arrays.asList("USER"));
             user = userDetailsRepository.save(user);
         }
@@ -48,6 +50,8 @@ public class UserService {
 
             admin.setUsername("reino");
             admin.setPassword("$2a$10$3fT4VDT7t7N4bUtdajXa4ekC6NzAj9EO/08u920sR66wDFonlV.au");
+            admin.setEmail("reino@gg.com");
+            admin.setName("Reino Nordin");
             admin.setAuthorities(Arrays.asList("ADMIN"));
             admin = userDetailsRepository.save(admin);
         }
